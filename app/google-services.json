@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "212729324424",
+    "firebase_url": "https://firestorebasics-cc6b5.firebaseio.com",
+    "project_id": "firestorebasics-cc6b5",
+    "storage_bucket": "firestorebasics-cc6b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212729324424:android:4c9ba8ff03b4c1cc",
+        "android_client_info": {
+          "package_name": "com.example.alessander.firebasefirestorebasics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212729324424-9hndk91i83a9jrg5i9t5pqjahf40jfde.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alessander.firebasefirestorebasics",
+            "certificate_hash": "0fae148f9e8fa469a807b760180eb49280447e80"
+          }
+        },
+        {
+          "client_id": "212729324424-hi0ni1mckhs6kvl78p7vo4n1bfj9rnld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5JFhiSg79T_mSLckRyv2QDwhLkWfT1wg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212729324424-hi0ni1mckhs6kvl78p7vo4n1bfj9rnld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212729324424:android:63cb0e35933b30c1",
+        "android_client_info": {
+          "package_name": "com.example.alessander.firestorebasics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212729324424-thhkeqh60tmrjvb6o6achuml1ot9hhtp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alessander.firestorebasics",
+            "certificate_hash": "0fae148f9e8fa469a807b760180eb49280447e80"
+          }
+        },
+        {
+          "client_id": "212729324424-hi0ni1mckhs6kvl78p7vo4n1bfj9rnld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5JFhiSg79T_mSLckRyv2QDwhLkWfT1wg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212729324424-hi0ni1mckhs6kvl78p7vo4n1bfj9rnld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
