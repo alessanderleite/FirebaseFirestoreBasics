@@ -2,6 +2,7 @@ package com.example.alessander.firebasefirestorebasics;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
@@ -12,6 +13,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,13 +23,23 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "FireLog";
     private RecyclerView mMainList;
     private FirebaseFirestore mFirestore;
+    private UsersListAdapter usersListAdapter;
+    private List<Users> usersList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        usersList = new ArrayList<>();
+        usersListAdapter = new UsersListAdapter(usersList);
+
         mMainList = (RecyclerView) findViewById(R.id.main_list);
+        mMainList.setHasFixedSize(true);
+        mMainList.setLayoutManager(new LinearLayoutManager(this));
+        mMainList.setAdapter(usersListAdapter);
+
+
         mFirestore = FirebaseFirestore.getInstance();
 
         mFirestore.collection("Users").addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -40,9 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
                     if (doc.getType() == DocumentChange.Type.ADDED) {
 
-                        String name = doc.getDocument().getString("name");
+                        Users users = doc.getDocument().toObject(Users.class);
+                        usersList.add(users);
 
-                        Log.d(TAG,"Name : " + name);
+                        usersListAdapter.notifyDataSetChanged();
                     }
                 }
             }
