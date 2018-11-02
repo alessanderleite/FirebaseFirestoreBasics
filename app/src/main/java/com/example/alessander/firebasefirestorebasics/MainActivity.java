@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -35,11 +36,14 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "Error : " + e.getMessage());
                 }
 
-                for (DocumentSnapshot doc : documentSnapshots) {
+                for (DocumentChange doc : documentSnapshots.getDocumentChanges()) {
 
-                    String user_name = doc.getString("name");
+                    if (doc.getType() == DocumentChange.Type.ADDED) {
 
-                    Log.d(TAG, "Name : " + user_name);
+                        String name = doc.getDocument().getString("name");
+
+                        Log.d(TAG,"Name : " + name);
+                    }
                 }
             }
         });
