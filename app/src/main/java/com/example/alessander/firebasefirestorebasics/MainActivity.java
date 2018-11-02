@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         usersList = new ArrayList<>();
-        usersListAdapter = new UsersListAdapter(usersList);
+        usersListAdapter = new UsersListAdapter(getApplicationContext(), usersList);
 
         mMainList = (RecyclerView) findViewById(R.id.main_list);
         mMainList.setHasFixedSize(true);
@@ -54,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
                     if (doc.getType() == DocumentChange.Type.ADDED) {
 
-                        Users users = doc.getDocument().toObject(Users.class);
+                        String user_id = doc.getDocument().getId();
+
+                        Users users = doc.getDocument().toObject(Users.class).withId(user_id);
                         usersList.add(users);
 
                         usersListAdapter.notifyDataSetChanged();

@@ -1,6 +1,6 @@
 package com.example.alessander.firebasefirestorebasics;
 
-public class Users {
+public class Users extends UserId {
 
     String name, status;
 
